@@ -3,6 +3,7 @@ package pl.zajavka.java10;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.function.Consumer;
 
 public class Main {
@@ -35,7 +36,14 @@ public class Main {
 //        foodCopied.add("Pineapple"); tak nie mozna
 
         // Optional
-        Optional<String>
+        Optional.ofNullable(null)
+                .get();
+
+        Optional.ofNullable(null)
+                .orElseThrow();
+
+        Optional.ofNullable(null)
+                .orElseThrow(() -> new RuntimeException("My custom message"));
     }
 
     private static Map<String, Map<String, List<String>>> someMap() {
